@@ -1,0 +1,15 @@
+Removed Pin From Net: NetName=GND Pin=JP2-1
+Added Component: Designator=R10(TO254P401X1016X2196-4P)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://www.mouser.com/datasheet/2/428/vpr22021-470867.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "4.01mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Vishay"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "Y09261R00000F9L"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "71-VPR221T1R0000FB"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Vishay-Precision-Group-Foil-Resistors/Y09261R00000F9L?qs=NHnMxE5Fd3z%252BuQNCyVCBVA%3D%3D"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=R10-1
+Added Pin To Net: NetName=NetJP2_1 Pin=JP2-1
+Added Pin To Net: NetName=NetJP2_1 Pin=R10-4
+Added Net: Name=NetJP2_1
+Added Member To Class: ClassName=Sheet1 Member=Component R10 Y09261R00000F9L

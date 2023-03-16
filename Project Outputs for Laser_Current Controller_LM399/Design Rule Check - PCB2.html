@@ -1,0 +1,388 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://D:\ALTIUM\Altium\AD21\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">28-10-2022</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">16:14:26</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc" class="file"><acronym title="E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc">E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">16</td></tr>
+</table>
+</td>
+</table><a name="ID3WFPPLPL5KNIFSO1NUPFHT1SWEYJR3YLVDOPZJFQCN30FF23S5TB"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAK51NH2IZJ5IB32LT11K0CE5BHAKH42Q4IXUYHCO5SKQXO3HSOO">Clearance Constraint (Gap=18mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID5PO3KUQPXGKDLVN1EBCEUNDMVMCRKVJEZS5VH3L5Y045J3AZKGFG">Clearance Constraint (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID3SORSVEX000RJ0LSO0Z44M2F0ON5M1O3LDV0UGE1AVNOFZETKNDE">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDREULIF1YPICELFKSPINYAI14WCYJEDWIALDAP3BYQWNEJJVB2RSC">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDX5PG3ZMEWMHQJ0KTBUONOAKPXOALUHL4VKKRHTIERHRE0VOBV43L">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID10LGYVTKFAHRMVKKS30OZVPADOTLNWQIXBKWP0DXEPYIMB2J0NQN">Width Constraint (Min=8mil) (Max=40mil) (Preferred=12mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDBGVA3UJZATW1NJOXBJEHHPONOGKEKJNDT4HKU2KU0R0SC24EDR0P">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJH3TXMEKBVGUHNYN2HO5GORZBOB1KUBWFXAK12CO11L1QUYJII4B">Hole Size Constraint (Min=1mil) (Max=100mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDJOG12NUED0CZL5SLEWZGKMNBADWJW2EZUZNULGBGMJGBRLDJUCUF">Hole To Hole Clearance (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDYLHQCYAVD2M0EZKO1Z2F2XF1GKBIDMHS0CIQYBEDHFF3YIBNYKDN">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDGHHME3PWJL5BPQVPU4R0VLLOXG4D5G5LA45OVJHIH0DAWTZ3JPWD">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDY4IYHITCCVT1GBGG1EXVD23OQH3I0BLWKAIOL0HDYPC1ITALZMFE">Silk to Silk (Clearance=10mil) (All),(All)</a></td>
+<td class="column2">10</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID4XLHLBBE0P0SMCBHDWQLYFGZ0EJOZEDIMHJCW5MCKR3XQTFPXH3H">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDNQ5LCXPXKHOCOBF0DUTDLMDXCGA5LUTEBP5TJHHXAGZ3J3CR2ROK">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">16</td>
+</tr>
+</table><br><a name="IDYLHQCYAVD2M0EZKO1Z2F2XF1GKBIDMHS0CIQYBEDHFF3YIBNYKDN"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2438.368mil|Location2.X=2449.618mil|Location1.Y=3113.368mil|Location2.Y=3124.618mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2438.368mil|Location2.X=2449.618mil|Location1.Y=3113.368mil|Location2.Y=3124.618mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.881mil &lt; 10mil) Between Pad IC2-1(2415mil,3090mil) on Multi-Layer And Pad IC2-2(2465mil,3140mil) on Multi-Layer [Top Solder] Mask Sliver [4.881mil] / [Bottom Solder] Mask Sliver [4.881mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2380.382mil|Location2.X=2391.632mil|Location1.Y=3113.368mil|Location2.Y=3124.618mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2380.382mil|Location2.X=2391.632mil|Location1.Y=3113.368mil|Location2.Y=3124.618mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (4.881mil &lt; 10mil) Between Pad IC2-1(2415mil,3090mil) on Multi-Layer And Pad IC2-4(2365mil,3140mil) on Multi-Layer [Top Solder] Mask Sliver [4.881mil] / [Bottom Solder] Mask Sliver [4.881mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5759.375mil|Location2.X=5770.625mil|Location1.Y=3014.375mil|Location2.Y=3025.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5759.375mil|Location2.X=5770.625mil|Location1.Y=3014.375mil|Location2.Y=3025.625mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (9.913mil &lt; 10mil) Between Pad Q2-1(5715mil,3020mil) on Multi-Layer And Pad Q2-2(5815mil,3020mil) on Multi-Layer [Top Solder] Mask Sliver [9.913mil] / [Bottom Solder] Mask Sliver [9.913mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5859.375mil|Location2.X=5870.625mil|Location1.Y=3014.375mil|Location2.Y=3025.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5859.375mil|Location2.X=5870.625mil|Location1.Y=3014.375mil|Location2.Y=3025.625mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (9.913mil &lt; 10mil) Between Pad Q2-2(5815mil,3020mil) on Multi-Layer And Pad Q2-3(5915mil,3020mil) on Multi-Layer [Top Solder] Mask Sliver [9.913mil] / [Bottom Solder] Mask Sliver [9.913mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDGHHME3PWJL5BPQVPU4R0VLLOXG4D5G5LA45OVJHIH0DAWTZ3JPWD"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4391.042mil|Location2.X=4402.292mil|Location1.Y=3830.621mil|Location2.Y=3841.871mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4391.042mil|Location2.X=4402.292mil|Location1.Y=3830.621mil|Location2.Y=3841.871mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.664mil &lt; 10mil) Between Arc (4325mil,3999.724mil) on Top Overlay And Pad C1-1(4422.3mil,3809.927mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [2.664mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4658.414mil|Location2.X=4669.664mil|Location1.Y=4123.66mil|Location2.Y=4134.91mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4658.414mil|Location2.X=4669.664mil|Location1.Y=4123.66mil|Location2.Y=4134.91mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.168mil &lt; 10mil) Between Pad D1-2(4642.835mil,4110mil) on Multi-Layer And Text "D1" (4665.556mil,4130.714mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.168mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDY4IYHITCCVT1GBGG1EXVD23OQH3I0BLWKAIOL0HDYPC1ITALZMFE"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=10mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3894.419mil|Location2.X=3905.669mil|Location1.Y=3652.603mil|Location2.Y=3663.853mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3894.419mil|Location2.X=3905.669mil|Location1.Y=3652.603mil|Location2.Y=3663.853mil|Absolute=True">Silk To Silk Clearance Constraint: (7.717mil &lt; 10mil) Between Arc (3900mil,3769.37mil) on Top Overlay And Text "C11" (3847.043mil,3615.797mil) on Top Overlay Silk Text to Silk Clearance [7.717mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4022.295mil|Location2.X=4033.545mil|Location1.Y=2124.455mil|Location2.Y=2135.705mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4022.295mil|Location2.X=4033.545mil|Location1.Y=2124.455mil|Location2.Y=2135.705mil|Absolute=True">Silk To Silk Clearance Constraint: (9.898mil &lt; 10mil) Between Arc (3939.646mil,2199.389mil) on Top Overlay And Text "C9" (4027.872mil,2094.556mil) on Top Overlay Silk Text to Silk Clearance [9.898mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6651.285mil|Location2.X=6662.535mil|Location1.Y=4397.986mil|Location2.Y=4409.236mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6651.285mil|Location2.X=6662.535mil|Location1.Y=4397.986mil|Location2.Y=4409.236mil|Absolute=True">Silk To Silk Clearance Constraint: (6.804mil &lt; 10mil) Between Arc (6745mil,4470.63mil) on Top Overlay And Text "C2" (6654.203mil,4338.448mil) on Top Overlay Silk Text to Silk Clearance [6.804mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7081.819mil|Location2.X=7093.069mil|Location1.Y=4365.479mil|Location2.Y=4376.729mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7081.819mil|Location2.X=7093.069mil|Location1.Y=4365.479mil|Location2.Y=4376.729mil|Absolute=True">Silk To Silk Clearance Constraint: (8.729mil &lt; 10mil) Between Arc (7045mil,4474.37mil) on Top Overlay And Text "C3" (7079.613mil,4329.938mil) on Top Overlay Silk Text to Silk Clearance [8.729mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4322.048mil|Location2.X=4333.298mil|Location1.Y=2592.159mil|Location2.Y=2603.409mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4322.048mil|Location2.X=4333.298mil|Location1.Y=2592.159mil|Location2.Y=2603.409mil|Absolute=True">Silk To Silk Clearance Constraint: (6.194mil &lt; 10mil) Between Text "IC3" (4297.647mil,2601.547mil) on Top Overlay And Track (4327.149mil,2590.75mil)(4640.692mil,2590.75mil) on Top Overlay Silk Text to Silk Clearance [6.194mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7565.19mil|Location2.X=7576.44mil|Location1.Y=2956.94mil|Location2.Y=2968.19mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7565.19mil|Location2.X=7576.44mil|Location1.Y=2956.94mil|Location2.Y=2968.19mil|Absolute=True">Silk To Silk Clearance Constraint: (6.996mil &lt; 10mil) Between Text "JP2" (7561.047mil,2959.178mil) on Top Overlay And Track (7500mil,2970mil)(7600mil,2970mil) on Top Overlay Silk Text to Silk Clearance [6.996mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6993.9mil|Location2.X=7005.15mil|Location1.Y=4165.938mil|Location2.Y=4177.188mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6993.9mil|Location2.X=7005.15mil|Location1.Y=4165.938mil|Location2.Y=4177.188mil|Absolute=True">Silk To Silk Clearance Constraint: (1.175mil &lt; 10mil) Between Text "TP_R1" (7000.112mil,4143.381mil) on Top Overlay And Track (6995mil,4115mil)(6995mil,4215mil) on Top Overlay Silk Text to Silk Clearance [1.175mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7744.714mil|Location2.X=7755.964mil|Location1.Y=3504.876mil|Location2.Y=3516.126mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7744.714mil|Location2.X=7755.964mil|Location1.Y=3504.876mil|Location2.Y=3516.126mil|Absolute=True">Silk To Silk Clearance Constraint: (1.449mil &lt; 10mil) Between Text "TP_R10" (7711.042mil,3691.542mil) on Top Overlay And Track (7755mil,3500mil)(7755mil,3700mil) on Top Overlay Silk Text to Silk Clearance [1.449mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7744.157mil|Location2.X=7755.407mil|Location1.Y=3497.861mil|Location2.Y=3509.111mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7744.157mil|Location2.X=7755.407mil|Location1.Y=3497.861mil|Location2.Y=3509.111mil|Absolute=True">Silk To Silk Clearance Constraint: (4.676mil &lt; 10mil) Between Text "TP_R10" (7711.042mil,3691.542mil) on Top Overlay And Track (7755mil,3500mil)(7855mil,3500mil) on Top Overlay Silk Text to Silk Clearance [4.676mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7745.519mil|Location2.X=7756.769mil|Location1.Y=3688.5mil|Location2.Y=3699.75mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\MAYAND\IITD\Prof. Project\Laser\Alitum\Laser_Current Controller_LM399\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7745.519mil|Location2.X=7756.769mil|Location1.Y=3688.5mil|Location2.Y=3699.75mil|Absolute=True">Silk To Silk Clearance Constraint: (6.18mil &lt; 10mil) Between Text "TP_R10" (7711.042mil,3691.542mil) on Top Overlay And Track (7755mil,3700mil)(7855mil,3700mil) on Top Overlay Silk Text to Silk Clearance [6.18mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
