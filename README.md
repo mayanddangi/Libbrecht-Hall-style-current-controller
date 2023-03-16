@@ -4,7 +4,7 @@ Before implementing the new current controller in hardware, the circuit design w
 
 We hope to benefit the scientific community by sharing this project on Github and offering a more effective method for noise-free driving of narrow-linewidth diode lasers. Since our project will be open-source, other researchers will be able to use it and possibly build upon it to enhance the functionality of the Libbrecht-Hall circuit.
 
-### Schematic Image of Design
+### Image of Schematic's design
 ![alt text](sch.png)
-### PCB Image of Design
+### Image of PCB's Design
 ![alt text](pcb2.png)
