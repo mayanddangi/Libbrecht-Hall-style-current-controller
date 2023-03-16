@@ -3,3 +3,8 @@ This project aims to develop an improved version of the Libbrecht-Hall circuit, 
 Before implementing the new current controller in hardware, the circuit design will be optimized using simulation tools like LTSpice. Additionally, we will conduct tests to evaluate the new controller's noise performance and contrast it with the current Libbrecht-Hall circuit.
 
 We hope to benefit the scientific community by sharing this project on Github and offering a more effective method for noise-free driving of narrow-linewidth diode lasers. Since our project will be open-source, other researchers will be able to use it and possibly build upon it to enhance the functionality of the Libbrecht-Hall circuit.
+
+### Schematic Image of Design
+![alt text](sch.png)
+### PCB Image of Design
+![alt text](pcb2.png)
