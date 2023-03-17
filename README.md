@@ -11,5 +11,5 @@ We hope to benefit the scientific community by sharing this project on Github an
 
 ### Refrences
 <ul>
-  <li> Libbrecht, K. G., and John L. Hall. <a href="https://aip.scitation.org/doi/citedby/10.1063/1.1143949>"A low‐noise high‐speed diode laser current controller."</a> Review of scientific instruments 64, no. 8 (1993): 2133-2135.</li>
+  <li> Libbrecht, K. G., and John L. Hall. <a href="https://aip.scitation.org/doi/citedby/10.1063/1.1143949">"A low‐noise high‐speed diode laser current controller."</a> Review of scientific instruments 64, no. 8 (1993): 2133-2135.</li>
 </ul>
