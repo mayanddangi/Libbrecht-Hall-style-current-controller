@@ -1,0 +1,94 @@
+Circuit: * E:\Prof. Project\Laser\Current Controller\Simulation\Draft3 - Copy.asc
+
+WARNING: Less than two connections to node NC_01.  This node is used by V4.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+Gmin = 0.00100083
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+vernier = 0.00390625
+vernier = 0.00195313
+Gmin = 0.00100083
+vernier = 0.000976563
+vernier = 0.000488281
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 33.3333%
+Source Step = 63.6364%
+Source Step = 77.2727%
+Source Step = 84.8485%
+Source Step = 92.4242%
+Source Step = 94.1288%
+Source Step = 95.5492%
+Source Step = 96.0227%
+Source Step = 96.4962%
+Source Step = 96.9697%
+Source Step = 97.1473%
+Source Step = 97.2656%
+Source Step = 97.384%
+Source Step = 97.5024%
+Source Step = 97.6207%
+vernier = 0.00585938
+Source Step = 97.7746%
+Source Step = 97.9522%
+Source Step = 98.1297%
+Source Step = 98.3073%
+Source Step = 98.4848%
+vernier = 0.00878906
+Source Step = 98.7068%
+Source Step = 98.9731%
+Source Step = 99.2395%
+Source Step = 99.5058%
+Source Step = 99.7721%
+vernier = 0.0131836
+Source Step = 99.9919%
+Source Step = 100%
+Starting source stepping with srcstepmethod=1
+Source Step = 3.0303%
+Source Step = 33.3333%
+Source Step = 63.6364%
+Source Step = 93.9394%
+Source Step = 100%
+Source Step = 99.003%
+Source Step = 99.0326%
+Source Step = 99.0621%
+Source Step = 99.0917%
+Source Step = 99.1213%
+Source Step = 99.1509%
+Source Step = 99.1805%
+Source Step = 99.2101%
+Source Step = 99.2397%
+Source Step = 99.2693%
+Source Step = 99.2989%
+Source Step = 99.3285%
+Source Step = 99.3581%
+Trouble finding operating point....skipping operating point for Transient analysis.
+
+Date: Mon Jul 25 18:28:04 2022
+Total elapsed time: 2.422 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 24236
+traniter = 0
+tranpoints = 1
+accept = 1
+rejected = 0
+matrix size = 82
+fillins = 96
+solver = Normal
+

@@ -1,0 +1,4 @@
+Resistor Value - 10ohm
+Temperature Coeff -  less than or equal to 5ppm
+Power Rating -  greater than 10W
+Can be mounted on PCB
