@@ -10,7 +10,7 @@ We hope to benefit the scientific community by sharing this project on Github an
 ### Image of PCB's Design
 ![alt text](pcb2.png)
 ### Image of PCB
-![alt text](pic1.png)
+![alt text](pic1.jpeg)
 
 ### Refrences
 <ul>
