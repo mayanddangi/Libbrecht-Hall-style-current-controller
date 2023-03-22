@@ -5,12 +5,12 @@ Before implementing the new current controller in hardware, the circuit design w
 
 We hope to benefit the scientific community by sharing this project on Github and offering a high constant current driver in low cost for noise-free driving of narrow-linewidth diode lasers or for any other applications.
 
+### Image of PCB
+![alt text](pic2.jpeg)
 ### Image of Schematic's design
 ![alt text](sch.png)
 ### Image of PCB's Design
 ![alt text](pcb2.png)
-### Image of PCB
-![alt text](pic2.jpeg)
 
 ### Refrences
 <ul>
